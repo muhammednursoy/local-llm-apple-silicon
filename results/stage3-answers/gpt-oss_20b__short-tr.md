@@ -1,0 +1,3 @@
+İdempotency anahtarı, aynı işlemin birden fazla kez gönderilmesi durumunda yalnızca bir kez işlenmesini garanti eder, böylece çift ödeme veya veri tutarsızlığı önlenir.  
+Bu anahtar, ağ gecikmeleri, zaman aşımı veya istemci hataları nedeniyle tekrar gönderilen isteklerin sistemde tekrarlı işlem yaratmasını engeller.  
+Sonuç olarak, ödeme güvenliği ve kullanıcı deneyimi artırılırken, sistem kaynakları da verimli kullanılmış olur.

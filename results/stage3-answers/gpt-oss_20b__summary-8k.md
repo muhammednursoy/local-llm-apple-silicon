@@ -1,0 +1,6 @@
+**5 En Önemli Bulgular – Apple Silicon’da Yerel LLM Çalıştırmak İsteyen Bir Mühendis İçin**
+
+| # | Bulgu | Neden Önemli? | Uygulama Önerisi |
+|---|--------|---------------|------------------|
+| 1 | **M4 Pro/Max’in 3 nm “Second‑Gen” mimarisi**<br>• 10‑16‑core CPU (4‑10 performans + 6‑4 verimlilik)<br>• 20‑40‑core GPU (ray‑tracing 2× hız)<br>• 2× Neural Engine hızı, 75 % daha yüksek bellek bant genişliği (M4 Pro: 273 GB/s, M4 Max: 546 GB/s) | Yerel LLM’ler için CPU‑ve GPU‑a dayalı yoğun hesaplamalar (token‑generation, KV‑cache, KV‑caching) çok daha hızlı çalışır. 2× hız, aynı modelle 2‑3× daha düşük gecikme ve 4‑5× daha yüksek throughput anlamına gelir. | **M4 Pro/Max**’i hedefleyin. 128 GB+ unified memory (M4 Max) ile 200 B+ parametreli modelleri (ör. Qwen‑2.5‑72B) tek cihazda çalıştırabilirsiniz. |
+| 2 | **Thunderbolt 5 (120 Gb/s) desteği** | Veri transferi, model dosyası yükleme, KV‑cache paylaşımları ve çoklu GPU (eğer varsa) arasında yüksek bant genişliği sağlar. | Model dosyalarını SSD’ye

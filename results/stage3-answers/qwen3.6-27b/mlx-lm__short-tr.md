@@ -1,0 +1,1 @@
+İdempotency anahtarı, aynı istek yanlışlıkla birden fazla kez gönderildiğinde sistemin sadece bir kez işlem yapmasını garantileyerek çift tahsilatı önler. Bu mekanizma, ağ hataları veya kullanıcı tarafındaki tekrar denemeler gibi durumlarda tutarlılık ve veri bütünlüğünü korur. Sonuç olarak, kullanıcı deneyimini iyileştirir ve finansal kayıpları minimize eder.

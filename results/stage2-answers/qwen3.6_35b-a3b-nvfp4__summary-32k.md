@@ -1,0 +1,7 @@
+Yerel LLM (Large Language Model) çalıştırmak isteyen bir mühendis için, sağlanan teknik belgelerden çıkarılan en önemli 5 bulgu şunlardır:
+
+1.  **Apple Silicon (M4 Serisi) ve MLX Framework'ü Yerel Inference İçin Üst Düzey Performans Sunuyor:**
+    Apple'ın M4 Pro ve M4 Max çipleri, yüksek bellek bant genişliği (M4 Max'te 546 GB/s'ye kadar) ve gelişmiş Neural Engine ile yerel LLM çalıştırma için ideal donanım altyapısı sağlar. Özellikle **MLX** framework'ü, Apple Silicon üzerinde üretim kalitesinde (production-grade) yüksek sürdürülebilir throughput (veri akışı hızı) sunar. Ancak, büyük modellerin (örn. 30B+ parametreli Qwen3-Coder) yerel sunucu olarak çalıştırılması sırasında KV cache'in sınırsız büyümesi ve bellek kısıtlamaları nedeniyle macOS kernel panic'lerine (çökme) yol açabileceği unutulmamalıdır; bu nedenle `--max-kv-size` gibi kısıtlamalar ve bellek yönetimi kritik öneme sahiptir.
+
+2.  **Yeni Nesil Kuantizasyon Teknikleri (MXFP4, 4-bit) Bellek Etkinliğini Artırırken Performansı Koruyor:**
+    OpenAI'nin GPT-oss modellerinde olduğu gibi, **MXFP4** (4.25 bit) ve benzeri ileri kuantizasyon teknikleri, MoE (Mixture of Experts) ağırlıklarının sıkıştırılmasını sağlayarak büyük modellerin (örn. 120B parametreli GPT-oss-120b) tek bir 80GB GPU'da veya hatta 1

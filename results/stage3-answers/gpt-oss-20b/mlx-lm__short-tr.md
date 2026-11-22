@@ -1,0 +1,5 @@
+<|channel|>analysis<|message|>The user writes in Turkish: "[istek 0b04ff5fe585] Bir ödeme sisteminde idempotency anahtarı neden gereklidir? Üç cümleyle açıkla."
+
+They want an explanation in Turkish, 3 sentences. The request: "Bir ödeme sisteminde idempotency anahtarı neden gereklidir? Üç cümleyle açıkla." So answer: 3 sentences explaining why idempotency key is required in a payment system. Should be concise. Let's produce 3 sentences.<|end|><|start|>assistant<|channel|>final<|message|>Idempotency anahtarı, aynı ödeme isteğinin birden fazla kez gönderilmesi durumunda işlemin yalnızca bir kez gerçekleşmesini sağlar, böylece çift ödeme yapılmasının önüne geçer.  
+Bu, ağ gecikmeleri, zaman aşımı hataları veya istemci tarafı yeniden denemeler nedeniyle oluşabilecek tekrarlanan istekleri kontrol altına alır.  
+Sonuç olarak, sistemin güvenilirliği, tutarlılığı ve müşteri memnuniyeti artar, çünkü kullanıcılar aynı işlemi tekrar göndermelerinin gereksiz ücretlere yol açmayacağını bilirler.

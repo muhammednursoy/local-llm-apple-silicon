@@ -1,0 +1,7 @@
+Verilen teknik belgeler ışığında, yerel (on-device) LLM çalıştırmak isteyen bir mühendis için en kritik 5 bulgu şunlardır:
+
+1.  **Apple Silicon’da Donanım ve Yazılım Uyumu (M4 Serisi ve MLX)**
+    Apple’ın M4 Pro ve M4 Max çipleri, yerel LLM çalıştırmak için ideal bir altyapı sunar. Özellikle **M4 Max**, 128GB’a kadar birleşik bellek (unified memory) ve 546GB/s bellek bant genişliği ile ~200 milyar parametreli modellerin cihaz üzerinde çalıştırılmasına olanak tanır. Yazılım tarafında ise **MLX** framework’ü, Apple Silicon üzerinde en yüksek sürekli üretim (throughput) performansını sağlarken; **MLC-LLM** ise ilk token süresi (TTFT) açısından daha hızlıdır. Mühendisler, kullanım senaryosuna göre (uzun bağlam vs. interaktif yanıt) bu framework’leri seçmelidir.
+
+2.  **Kuantizasyon (Quantization) Stratejisi: 4-Bit Altın Orta ve Uzun Bağlam Riski**
+    Bellek ayak izini azaltmak için kuantizasyon şarttır ancak dikkatli seçilmelidir. Araştırmalar, **4-bit (INT4/NF4)** kuantizasyonun, orijinal modele göre %70’e varan bellek tasarrufu sağlarken performans kaybını minimumda tuttuğunu gösterir. Ancak, **8-bit** kuantizasyon daha güvenliyken, 4-bit ve altı (3/2-bit) yöntemler özellikle **uzun bağlam (long-context)** görevlerinde ve İngilizce dışı dillerde ciddi performans düş

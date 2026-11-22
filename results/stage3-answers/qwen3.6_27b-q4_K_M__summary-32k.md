@@ -1,0 +1,7 @@
+Verilen teknik belgeleri (Apple M4 Pro/Max duyurusu, arXiv makaleleri, GitHub hata raporları, Epoch AI raporları ve model kartları) analiz ederek, yerel LLM çalıştırmak isteyen bir mühendis için en kritik 5 bulgu aşağıdadır:
+
+1.  **Apple Silicon'da Hafıza Yönetimi ve Kernel Panic Riski (MLX Framework)**
+    Apple Silicon (M4 Pro/Max dahil) üzerinde yerel LLM çalıştırırken, özellikle MLX framework'ü kullanırken **KV Cache (Key-Value Cache)** sınırsız büyümesi ciddi bir sistem riski taşır. `mlx_lm.server` gibi araçlar, varsayılan olarak KV cache boyutunu sınırlamaz (`--max-kv-size` desteği eksik veya yetersiz olabilir). Bu durum, RAM'in büyük kısmının "wired memory" (disk'e swap edilemeyen kilitli hafıza) olarak ayrılmasına neden olur. macOS'un hafıza baskısını algılayamaması ve GPU sürücüsünün (`IOGPUMemory`) çökmesi sonucu **Kernel Panic** (sistem çökmesi ve yeniden başlatma) yaşanabilir. Mühendisler, uzun bağlam (long-context) işlemlerinde hafıza sınırlarını manuel olarak kontrol etmeli ve `sysctl` ayarlarını veya framework güncellemelerini dikkatle izlemelidir.
+
+2.  **Kuantizasyonun "Doğruluk" Ötesindeki Etkileri ve Uzun Bağlamda Performans Kaybı**
+    Model sıkıştırma (quantization) teknikleri değerlendirilirken sadece genel doğruluk (accuracy) skorlarına bakmak yetersizdir. Araştırmalar, kuantize edilmiş modellerin (özellikle 4-bit ve

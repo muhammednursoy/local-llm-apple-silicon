@@ -1,0 +1,4 @@
+{
+  "short-tr": "Bir ödeme sisteminde idempotency anahtarı neden gereklidir? Üç cümleyle açıkla.",
+  "long-answer-tr": "Bir bankanın ACH ödemesini iade etmesi ile kartlı bir ödemenin iadesi arasındaki farkları adım adım anlat: zamanlama, geri çevrilebilirlik, müşteri deneyimi ve hata durumları. En az 400 kelime yaz."
+}

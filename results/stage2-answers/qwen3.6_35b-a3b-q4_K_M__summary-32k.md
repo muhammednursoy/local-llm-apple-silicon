@@ -1,0 +1,7 @@
+Yerel LLM (Büyük Dil Modeli) çalıştırmak isteyen bir mühendis için paylaşılan teknik belgeleri incelediğimde, donanım seçimi, yazılım ekosistemi, model optimizasyonu ve güvenlik gibi kritik alanlarda öne çıkan 5 temel bulgu şunlardır:
+
+1. **Apple Silicon (M4 Serisi) ve Unified Memory Mimarisi Yerel Çalıştırma İçin Kritik Bir Avantajdır:**
+   Apple'ın M4 Pro ve M4 Max çipleri, "Unified Memory" (Birleşik Bellek) mimarisi sayesinde CPU, GPU ve Neural Engine'in aynı bellek havuzunu paylaşmasını sağlar. Bu mühendisler için şu anlama gelir: NVIDIA GPU'larda VRAM sınırlaması nedeniyle çalıştıramayacağınız büyük modelleri (örneğin M4 Max'te 128GB'a kadar) tek bir makinede yerel olarak çalıştırabilirsiniz. Belge, M4 Max'in 546 GB/s bellek bant genişliğine sahip olduğunu ve bu sayede yaklaşık 200 milyar parametreli modellerle etkileşimi kolaylaştırdığını belirtir. Ayrıca Apple Intelligence için optimize edilmiş Neural Engine, yerel AI iş yükleri için donanımsal hızlandırma sağlar.
+
+2. **MLX Framework, Apple Silicon Üzerinde En Yüksek Performansı Sunan Yerel Runtime'dır:**
+   Apple Silicon üzerinde LLM çalıştırmak için yapılan karşılaştırmalı çalışmalar (özellikle `Production-Grade Local LLM Inference on Apple Silicon` belgesi), MLX'in diğer seçeneklere (Ollama, llama.cpp, PyTorch MPS) göre üstün olduğunu göstermektedir. MLX, en yüksek sürdürülebilir üretim hızına (throughput) sahiptir. Ollama geliştirici deneyimi için iy

@@ -1,0 +1,13 @@
+ts,model,prompt_name,run,warmup,think,max_tokens,powermode,ac_power,swap_used_mb_before,swap_used_mb_after,mem_free_pct_after,load_s,prompt_tokens,prefill_tok_s,gen_tokens,decode_tok_s,wall_s,peak_mem_gb
+2026-10-08T18:12:04,mlx-community/Qwen3.6-35B-A3B-4bit,short-tr,0,True,False,400,0,True,9225.0,9225.0,43,5.09,54,30.7,125,93.2,4.41,19.71
+2026-10-08T18:12:08,mlx-community/Qwen3.6-35B-A3B-4bit,short-tr,1,False,False,400,0,True,9225.0,9225.0,43,0,55,391.1,102,93.3,1.24,19.71
+2026-10-08T18:12:09,mlx-community/Qwen3.6-35B-A3B-4bit,short-tr,2,False,False,400,0,True,9225.0,9225.0,43,0,52,381.6,116,93.2,1.39,19.71
+2026-10-08T18:12:11,mlx-community/Qwen3.6-35B-A3B-4bit,short-tr,3,False,False,400,0,True,9225.0,9225.0,43,0,55,389.4,119,92.5,1.43,19.71
+2026-10-08T18:12:12,mlx-community/Qwen3.6-35B-A3B-4bit,summary-8k,0,True,False,400,0,True,9225.0,9225.0,44,5.09,7230,971.4,400,83.1,12.27,21.71
+2026-10-08T18:12:24,mlx-community/Qwen3.6-35B-A3B-4bit,summary-8k,1,False,False,400,0,True,9225.0,9225.0,44,0,7231,981.7,400,83.3,12.18,21.71
+2026-10-08T18:12:37,mlx-community/Qwen3.6-35B-A3B-4bit,summary-8k,2,False,False,400,0,True,9225.0,9225.0,44,0,7229,982.3,400,83.4,12.17,21.71
+2026-10-08T18:12:49,mlx-community/Qwen3.6-35B-A3B-4bit,summary-8k,3,False,False,400,0,True,9225.0,9225.0,44,0,7233,982.1,400,83.3,12.18,21.71
+2026-10-08T18:13:01,mlx-community/Qwen3.6-35B-A3B-4bit,summary-32k,0,True,False,400,0,True,9225.0,9225.0,42,5.09,31552,754.9,400,65.5,47.94,23.82
+2026-10-08T18:13:49,mlx-community/Qwen3.6-35B-A3B-4bit,summary-32k,1,False,False,400,0,True,9225.0,9225.0,42,0,31552,755.1,400,65.4,47.92,23.82
+2026-10-08T18:14:37,mlx-community/Qwen3.6-35B-A3B-4bit,summary-32k,2,False,False,400,0,True,9225.0,9225.0,42,0,31555,754.5,400,65.3,47.98,23.82
+2026-10-08T18:15:25,mlx-community/Qwen3.6-35B-A3B-4bit,summary-32k,3,False,False,400,0,True,9225.0,9193.0,42,0,31553,755.5,400,65.4,47.92,23.82

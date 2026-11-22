@@ -1,0 +1,7 @@
+Yerel (local) LLM çalıştırmak isteyen bir mühendis için sağlanan teknik belgelerden çıkarılan en önemli 5 bulgu şunlardır:
+
+1.  **Apple Silicon’da Donanım ve Yazılım Uyumu Kritik Öneme Sahip (MLX Avantajı ve Riskler)**
+    Apple M4 Pro/Max çipleri, yüksek bant genişliğine (M4 Pro’da 273GB/s, M4 Max’te 546GB/s) ve gelişmiş Neural Engine’lere sahip olup yerel AI yükleri için idealdir. Ancak, yerel çalıştırma için **MLX** framework’ü, özellikle uzun bağlam (long-context) ve yüksek throughput gerektiren senaryolarda en iyi performansı sunsa da, dikkatli yapılandırma gerektirir. `mlx_lm.server` kullanırken KV cache’in sınırsız büyümesi, macOS’un bellek yönetimi (wired memory) ile çakışarak **kernel panic** (sistem çökmesi) yapabilir. Mühendisler, `max-kv-size` sınırlamalarını ve bellek bütçelerini (wired limit) sıkıca kontrol etmelidir.
+
+2.  **Kuantizasyon (Quantization) Tek Başına Yeterli Değil; "Flips" ve Uzun Bağlam Kayıpları Riski Var**
+    Model boyutunu küçültmek için kullanılan kuantizasyon (özellikle 4-bit ve altı), doğruluk skorlarında (accuracy) küçük düşüşler gösterse bile, kullanıcı deneyimini bozan **"flip"** (doğru cevabın yanlış, yanlışın doğru çıkması) fenomenine yol açabilir. Ayrıca, 4-bit kuantizasyon **uzun bağlam (>64K token)** görevlerinde ciddi performans kay

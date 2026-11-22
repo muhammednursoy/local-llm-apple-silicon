@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>local.llm.temperature-proxy</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/opt/homebrew/bin/python3.11</string>
+    <string>-I</string>
+    <string>REPO_DIR/assistant/temperature-proxy.py</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>StandardOutPath</key>
+  <string>HOME_DIR/.local/state/local-llm/temperature-proxy.log</string>
+  <key>StandardErrorPath</key>
+  <string>HOME_DIR/.local/state/local-llm/temperature-proxy.log</string>
+</dict>
+</plist>

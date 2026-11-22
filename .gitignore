@@ -1,0 +1,12 @@
+.hf/
+.venv/
+__pycache__/
+.DS_Store
+bench/prompts-stage2.json
+results/*-pull.log
+harness/smoke-*.md
+harness/result-*.tsv
+eval/results/
+eval/prompts/scenarios/
+eval/prompts/outputs/
+eval/prompts/judge/

@@ -1,0 +1,7 @@
+Yerel LLM (Large Language Model) çalıştırmayı hedefleyen bir yazılım mühendisi için paylaşılan teknik belgelerden derlenen en önemli 5 bulgu şunlardır:
+
+1.  **Apple Silicon Üzerinde MLX, Performans ve Geliştirici Deneyimi Açısından Öne Çıkıyor:**
+    Apple Silicon (M serisi çipler) üzerinde yerel LLM çalıştırmak için yapılan kapsamlı karşılaştırmalı çalışmalara (MLX, MLC-LLM, Ollama, llama.cpp, PyTorch MPS) göre, **MLX** en yüksek sürdürülebilir üretim hızını (throughput) sunarken, **MLC-LLM** daha kısa ilk token süresi (TTFT) ve hazır özellikleriyle öne çıkıyor. Ollama geliştirici dostu olsa da performans açısından geride kalıyor. Bu, yerel üretim için doğru framework seçiminde "hız" ile "geliştirici verimliliği" arasında bir tercih yapılması gerektiğini gösterir.
+
+2.  **Bellek Yönetimi ve KV Cache Sınırları Kritik Bir Kararlılık Sorunu Oluşturuyor:**
+    Apple Silicon üzerinde yüksek bellekli modeller (örn. 96GB+ RAM) çalıştırırken, özellikle uzun bağlam (long-context) işlemlerinde KV Cache'in sınırsız büyümesi ve belleğin "wired" (sabitleme) edilmesi, macOS çekirdeğinde **Kernel Panic**'e yol açabiliyor. MLX gibi sistemlerde `max-kv-size` parametresi veya bellek sınırlamalarının (`wired_limit_mb`) doğru yapılandırılmaması, sistemin çökmesine neden olur. Bu nedenle, yerel LLM sunucuları kurarken bellek sınırlamalarını ve cache
